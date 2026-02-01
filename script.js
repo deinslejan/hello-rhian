@@ -1,6 +1,6 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    const envelope = document.getElementById('envelope');
+    const openButton = document.getElementById('openButton');
     const messageSection = document.getElementById('messageSection');
     const activitiesSection = document.getElementById('activitiesSection');
     const yes1Checkbox = document.getElementById('yes1');
@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const othersText = document.getElementById('othersText');
     const downloadBtn = document.getElementById('downloadBtn');
 
-    // Card opening animation
-    envelope.addEventListener('click', function() {
-        envelope.classList.add('opened');
+    // Button click animation
+    openButton.addEventListener('click', function() {
+        openButton.classList.add('clicked');
         
-        // Show message section after envelope animation
+        // Show message section after button animation
         setTimeout(() => {
             messageSection.classList.add('visible');
-        }, 1500);
+        }, 800);
     });
 
     // Handle "Yes" checkbox clicks

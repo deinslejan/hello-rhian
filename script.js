@@ -49,6 +49,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedActivities = document.querySelectorAll('input[name="activity"]:checked');
         
         if (selectedActivities.length > 0) {
+            // Get activity labels
+            const activities = Array.from(selectedActivities).map(cb => {
+                return cb.parentElement.querySelector('.activity-name').textContent;
+            });
+            
+            // Update the selected list in final message
+            const selectedList = document.getElementById('selectedList');
+            selectedList.innerHTML = activities.map(activity => 
+                `<li>${activity}</li>`
+            ).join('');
+            
             // Show final message
             finalMessage.classList.add('visible');
             
@@ -60,9 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, 100);
             
-            // Optional: Log selected activities (for development/debugging)
-            const activities = Array.from(selectedActivities).map(cb => cb.value);
+            // Log to console (currently just for viewing, not sent anywhere)
             console.log('Selected activities:', activities);
+            console.log('Note: These selections are currently only displayed on the page. To save them, you would need to integrate with a backend service or email API.');
         } else {
             alert('Please select at least one activity!');
         }

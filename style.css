@@ -96,7 +96,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .message-section.visible {
@@ -217,8 +217,8 @@ body {
     content: '';
     position: absolute;
     display: none;
-    left: 8px;
-    top: 3px;
+    left: 7px;
+    top: 2px;
     width: 7px;
     height: 14px;
     border: solid #c9432d;
@@ -324,15 +324,24 @@ body {
 }
 
 .activity-item .checkmark::after {
-    left: 6px;
-    top: 2px;
+    content: '';
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
     width: 6px;
     height: 12px;
+    border: solid #c9432d;
     border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }
 
 .activity-item input[type="checkbox"]:checked ~ .checkmark {
     background: #f5f0e8;
+}
+
+.activity-item input[type="checkbox"]:checked ~ .checkmark::after {
+    display: block;
 }
 
 .activity-name {
@@ -393,6 +402,40 @@ body {
     font-family: 'Caveat', cursive;
     color: #3a3a3a;
     font-size: 22px;
+}
+
+.selected-list {
+    list-style: none;
+    padding: 20px 0;
+    margin: 10px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.selected-list li {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: #3a3a3a;
+    padding: 8px 0;
+    border-bottom: 1px dashed #c9b896;
+    position: relative;
+    padding-left: 25px;
+}
+
+.selected-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c9432d;
+    font-weight: bold;
+}
+
+.selected-list li:last-child {
+    border-bottom: none;
+}
+
+.closing-text {
+    margin-top: 20px;
 }
 
 /* Paper texture effect */

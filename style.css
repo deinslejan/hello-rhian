@@ -86,20 +86,17 @@ body {
     }
 }
 
-}
-
 /* Message Section */
 .message-section {
     opacity: 0;
     display: none;
     margin-top: 40px;
-}
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
-    margin-top: 20px;
 }
 
 .message-section.visible {
+    display: block;
     opacity: 1;
     transform: translateY(0);
 }
